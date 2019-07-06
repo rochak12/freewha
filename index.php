@@ -12,7 +12,7 @@ session_start();
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="../style/style.css" rel="stylesheet" type="text/css" />
+<link href="/style/style.css" rel="stylesheet" type="text/css" />
 <style>
 /*html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}*/
 .w3-sidebar {
@@ -23,7 +23,7 @@ session_start();
   height: inherit;
 }
 </style>
-<script type="text/javascript" src="../javascript.js"></script>
+<script type="text/javascript" src="/javascript.js"></script>
 </HEAD>
 
 
@@ -64,10 +64,10 @@ session_start();
 
 
 <?php
-   $json = file_get_contents("../json/jsoneng.json");
+   $json = file_get_contents("json/jsoneng.json");
    $obj = json_decode($json, true);
 
-   $json2 = file_get_contents("../json/jsonnep.json");
+   $json2 = file_get_contents("json/jsonnep.json");
    $obj2 = json_decode($json2, true);
 
 

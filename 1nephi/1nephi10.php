@@ -52,7 +52,7 @@ session_start();
 
 
       <table>
-<tr><td class="caption"> <span class="english"> Chaper 1 /</span><span class="nepali">अध्याय १</span></td></tr>
+<tr><td class="caption"> <span class="english"> Chaper 10 /</span><span class="nepali">अध्याय 10</span></td></tr>
 
 <div class="wrap" id="demo"></div> 
 
@@ -72,13 +72,13 @@ session_start();
 
 
     $bookName = $obj['books'][0]['book'];
-    $chapterName = $obj['books'][0]['chapters'][0]['chapter'];
+    $chapterName = $obj['books'][0]['chapters'][9]['chapter'];
     $GLOBALS['i'] = 0;
    
     foreach ($db->query("SELECT * FROM book where name_book ='$bookName'") as $booklist){
       $GLOBALS['bookNo'] =  $booklist['book_id'];
     }
-   foreach ($obj['books'][0]['chapters'][0]['verses'] as $print )  
+   foreach ($obj['books'][0]['chapters'][9]['verses'] as $print )  
    {
      $flag1 = FALSE;
      $currentVerse = $print['verse'];
@@ -88,8 +88,8 @@ session_start();
      else
  {    $username = $_SESSION['username']; }
      
-     if ($db->query("SELECT * FROM highlight where book_id=1 and chapter=1 and verse = $currentVerse and username = '$username' ")){
-    foreach ($db->query("SELECT * FROM highlight where book_id=1 and chapter=1 and username = '$username' ") as $row){
+     if ($db->query("SELECT * FROM highlight where book_id=1 and chapter=10 and verse = $currentVerse and username = '$username' ")){
+    foreach ($db->query("SELECT * FROM highlight where book_id=1 and chapter=10 and username = '$username' ") as $row){
      if ($row['verse'] === $print['verse']){
         echo "<tr><td class='english highlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'><mark>";   
         echo $print['verse'] . " " ;
@@ -97,7 +97,7 @@ session_start();
 
         echo "<tr><td class='nepali highlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'><mark>";   
         echo $print['verse'] . " " ;
-        echo $obj2['books'][0]['chapters'][0]['verses'][$i]['text'] . "</mark></td></tr>" ;
+        echo $obj2['books'][0]['chapters'][9]['verses'][$i]['text'] . "</mark></td></tr>" ;
 
         echo  "<tr><td class='invisible'></td></tr>" ;  
         $flag1 = TRUE;
@@ -111,7 +111,7 @@ session_start();
 
    echo "<tr><td class='nepali unhighlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'>";   
    echo $print['verse'] . " " ;
-   echo $obj2['books'][0]['chapters'][0]['verses'][$i]['text'] . "</td></tr>" ;
+   echo $obj2['books'][0]['chapters'][9]['verses'][$i]['text'] . "</td></tr>" ;
 
    echo  "<tr><td class='invisible'></td></tr>" ;
 

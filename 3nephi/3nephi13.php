@@ -14,7 +14,7 @@ session_start();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="../style/style.css" rel="stylesheet" type="text/css" />
 <style>
-/*html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}*/
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 .w3-sidebar {
   z-index: 3;
   width: 250px;
@@ -42,17 +42,17 @@ session_start();
       <!--changes must be done below this-->
 
 
-      <?php include ($_SERVER['DOCUMENT_ROOT']."/1nephi/1nephiChapters.php");?>
+      <?php include ($_SERVER['DOCUMENT_ROOT']."/3nephi/3nephiChapters.php");?>
       <?php include ($_SERVER['DOCUMENT_ROOT']."/databaseConnection.php");?>
-      <?//php include ($_SERVER['DOCUMENT_ROOT']."/1nephi/1nephi11.php");?> 
     
 
 
       <!--include the whole php page of each page here -->
 
 
+
       <table>
-<tr><td class="caption"> <span class="english"> Chaper 1 /</span><span class="nepali">अध्याय १</span></td></tr>
+<tr><td class="caption"> <span class="english"> Nephi 13 </span><span class="nepali">/ ३ नफी 13</span></td></tr>
 
 <div class="wrap" id="demo"></div> 
 
@@ -71,14 +71,14 @@ session_start();
    $obj2 = json_decode($json2, true);
 
 
-    $bookName = $obj['books'][0]['book'];
-    $chapterName = $obj['books'][0]['chapters'][0]['chapter'];
+    $bookName = $obj['books'][10]['book'];
+    $chapterName = $obj['books'][10]['chapters'][13]['chapter'];
     $GLOBALS['i'] = 0;
    
     foreach ($db->query("SELECT * FROM book where name_book ='$bookName'") as $booklist){
       $GLOBALS['bookNo'] =  $booklist['book_id'];
     }
-   foreach ($obj['books'][0]['chapters'][0]['verses'] as $print )  
+   foreach ($obj['books'][10]['chapters'][13]['verses'] as $print )  
    {
      $flag1 = FALSE;
      $currentVerse = $print['verse'];
@@ -88,8 +88,8 @@ session_start();
      else
  {    $username = $_SESSION['username']; }
      
-     if ($db->query("SELECT * FROM highlight where book_id=1 and chapter=1 and verse = $currentVerse and username = '$username' ")){
-    foreach ($db->query("SELECT * FROM highlight where book_id=1 and chapter=1 and username = '$username' ") as $row){
+     if ($db->query("SELECT * FROM highlight where book_id=11 and chapter=14 and verse = $currentVerse and username = '$username' ")){
+    foreach ($db->query("SELECT * FROM highlight where book_id=11 and chapter=14 and username = '$username' ") as $row){
      if ($row['verse'] === $print['verse']){
         echo "<tr><td class='english highlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'><mark>";   
         echo $print['verse'] . " " ;
@@ -97,7 +97,7 @@ session_start();
 
         echo "<tr><td class='nepali highlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'><mark>";   
         echo $print['verse'] . " " ;
-        echo $obj2['books'][0]['chapters'][0]['verses'][$i]['text'] . "</mark></td></tr>" ;
+        echo $obj2['books'][10]['chapters'][13]['verses'][$i]['text'] . "</mark></td></tr>" ;
 
         echo  "<tr><td class='invisible'></td></tr>" ;  
         $flag1 = TRUE;
@@ -111,7 +111,7 @@ session_start();
 
    echo "<tr><td class='nepali unhighlight'  id='"  . $print['verse'] ."'" . "onmouseup='callevent(" . $print['verse'] .  ",event)'>";   
    echo $print['verse'] . " " ;
-   echo $obj2['books'][0]['chapters'][0]['verses'][$i]['text'] . "</td></tr>" ;
+   echo $obj2['books'][10]['chapters'][13]['verses'][$i]['text'] . "</td></tr>" ;
 
    echo  "<tr><td class='invisible'></td></tr>" ;
 

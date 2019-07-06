@@ -1,25 +1,26 @@
 
-/*Link coloring*/
+ /*Link coloring*/
 a:link {
-	color: red;
-}
+	text-decoration:  none;
+  /*	color: rgb(37, 124, 37);*/
+} 
 
-/* visited link */
+/* visited link 
 a:visited {
 	color: green;
 }
 
-/* mouse over link */
+/* mouse over link 
 a:hover {
-	color: hotpink;
+	color: rgb(36, 34, 35);
 }
 
-/* selected link */
+/* selected link 
 a:active {
 	color: blue;
-}
-
-/* table {
+} */
+/* 
+table {
 	align-content:center;
 
 	border-collapse: collapse;
@@ -27,11 +28,12 @@ a:active {
 	margin: 0 10% 0 10%;
 } 
 */
- td, th {
+td, th {
 	text-align: left;
-	padding: 10px;
-	margin:2px ;
-}
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: 16px;
+} 
 
 
 
@@ -252,13 +254,13 @@ caption {
 
 
 .brass {
-	font-size:16px;
+	font-size:20px;
 	font-style:italic;
     text-align:left;
 }
 
 .brassNepali {
-	font-size:14px;
+	font-size:20px;
 	text-align:left;
 }
 
@@ -275,11 +277,11 @@ img.thoughts{
 	margin: 8px;
 }
 
-
+/* 
 p {
 	margin: 5px !important;
-	font-size: 14pt;
-}
+	font-size: 0pt;
+} */
 
 .round {
 	display: block;
